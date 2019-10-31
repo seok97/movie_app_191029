@@ -1,26 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+function Jsxthe(props){
+  console.log(props);
+  return <h3> 안녕 그지 깽깽이들아.</h3>
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload. 호오 이것이 리액트 이군요?
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div> 
+      <h1>여기는 app 안이야.</h1>
+      <Jsxthe fav="kimchi"  />
     </div>
-  );
+
+    );
 }
 
 export default App;

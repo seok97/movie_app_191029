@@ -1,34 +1,59 @@
 import React from 'react';
-import { ENOTCONN } from 'constants';
+import PropTypes from 'prop-types';
 
-function Jsxthe(props){
-  console.log(props.name);
+function Jsxthe({name, shit, rating}){
+
   return (
-  <h3> 내가 좋아하는 아이돌은 {props.name} 이야. <br></br><img src={props.shit} /> </h3>
+  <div>
+    <h3> 내가 좋아하는 아이돌은 {name} 이야. </h3>
+    <img src={shit} width="500px" alt={name} />
+    <h4>{rating}/5.0</h4>
+  </div>
   );
 }
 
+function Idols(dis){
+ 
+  return <Jsxthe name={dis.name} shit={dis.shit} key={dis.id} rating={dis.ratin}/>
+}
+
+
 const foodlke = [
   { 
+    id:1,
     name: "itzy",
-    shit: "https://farm8.staticflickr.com/7896/46731686204_51bdb425e3_o.jpg"
+    shit: "https://farm8.staticflickr.com/7896/46731686204_51bdb425e3_o.jpg",
+    ratin: 4
   },
   { 
+    id:2,
     name: "twice",
-    shit: "https://farm5.staticflickr.com/4819/46713125631_3f1356b6cf_o.jpg"
+    shit: "https://farm5.staticflickr.com/4819/46713125631_3f1356b6cf_o.jpg",
+    ratin: 4.9
   },
   { 
+    id:3,
     name: "fromis",
-    shit: "https://live.staticflickr.com/65535/48013082297_623af4ef20_o.jpg"
+    shit: "https://live.staticflickr.com/65535/48013082297_623af4ef20_o.jpg",
+    ratin: 5
   }
 
 ]
+
+
+Jsxthe.propTypes = {
+  name: PropTypes.string.isRequired,
+  shit: PropTypes.string.isRequired,
+  rating: PropTypes.number
+}
+
+
 
 function App() {
   return (
     <div> 
       <h1>여기는 app 안이야.</h1>
-      <p>{foodlke.map( etc => ( <Jsxthe name={etc.name} shit={etc.shit} />)) }</p>
+      <h4>{foodlke.map(Idols)}</h4>
     </div>
 
     );

@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Jsxthe({name, shit, rating}){
+
+
+function Favidols({name, shit, rating}){
 
   return (
   <div>
@@ -18,7 +20,7 @@ function Idols(dis){
 }
 
 
-const foodlke = [
+const idolsinfo = [
   { 
     id:1,
     name: "itzy",

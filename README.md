@@ -129,3 +129,34 @@ class App extends React.Component{
 
 export default App;
 ```
+
+2019-11-05
+
+### 패칭 , 비구조화 할당
+```js
+import React from 'react';
+
+
+class App extends React.Component{
+
+    state = {
+      isLoading: true,
+      movies: []
+    };
+
+    componentDidMount(){
+      setTimeout(() => {
+        this.setState({isLoading: false});
+        }, 6000
+      )
+    }
+
+  render(){
+    const {isLoading} = this.state;
+    return (<div>{isLoading ? "Loading..." : "we are ready"}</div>
+    );
+  }
+}
+
+export default App;
+```
